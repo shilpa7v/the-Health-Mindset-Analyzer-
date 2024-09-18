@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Mindset Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Health Mindset Analyzer</h1>
+    <form method="POST" action="{{ url_for('submit') }}">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="language">Language (en/es):</label>
+        <input type="text" id="language" name="language" required>
+        
+        {% for i, question in enumerate(questions) %}
+        <label>{{ question }}</label><br>
+        <input type="radio" name="question{{i+1}}" value="1" required> 1 
+        <input type="radio" name="question{{i+1}}" value="2" required> 2
+        <input type="radio" name="question{{i+1}}" value="3" required> 3
+        <input type="radio" name="question{{i+1}}" value="4" required> 4
+        <input type="radio" name="question{{i+1}}" value="5" required> 5
+        <br><br>
+        {% endfor %}
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html
