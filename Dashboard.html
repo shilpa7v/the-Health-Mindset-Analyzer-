@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to Your Dashboard</h1>
+    <p>Hello, {{ current_user.username }}! Here are your past responses:</p>
+
+    <ul>
+        {% for response in responses %}
+        <li>
+            <strong>{{ response.name }}</strong> (Age: {{ response.age }}) - Feedback: {{ response.feedback }}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('achievements') }}">Check Achievements</a><br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
