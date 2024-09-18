@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <h1>Feedback for {{ name }}</h1>
+    <p>{{ feedback_text }}</p>
+
+    <h2>Download your feedback</h2>
+    <a href="{{ url_for('download_file', filename=speech_file) }}">Download Speech</a>
+
+    <h2>Your Mindset Chart</h2>
+    <img src="{{ url_for('static', filename='chart.png') }}" alt="Pie Chart">
+    
+    {% if mindset_changed %}
+        <p>Great! Your mindset has improved.</p>
+    {% else %}
+        <p>Your mindset hasn't changed much. Keep working on it!</p>
+    {% endif %}
+</body>
+</html>
