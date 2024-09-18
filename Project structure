@@ -1,0 +1,13 @@
+/health_mindset_analyzer
+    /static
+        /css
+            style.css
+    /templates
+        index.html
+        result.html
+        login.html
+        dashboard.html
+        achievements.html
+    app.py
+    database.db (created by SQLite)
+    requirements.tx
