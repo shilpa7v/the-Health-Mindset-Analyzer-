@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements</title>
+</head>
+<body>
+    <h1>Your Achievements</h1>
+    
+    {% if improvement %}
+    <p>Congratulations! You have improved your health mindset!</p>
+    {% else %}
+    <p>Keep working on your health goals. You're getting there!</p>
+    {% endif %}
+    
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html
